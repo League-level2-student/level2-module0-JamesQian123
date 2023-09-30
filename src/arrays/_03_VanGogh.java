@@ -50,14 +50,14 @@ public class _03_VanGogh extends PApplet {
     PImage canvas;
     PImage paintbrushCursor;
     boolean initializeCanvas = true;
-    
+    PImage[] image;
     /*
      * Write your code below
      */
     Brush brush;
     
     void initializePaintings() {
-        
+        image = new PImage[4];
     }
     
     void selectNextPainting() {
