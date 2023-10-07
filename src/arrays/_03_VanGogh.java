@@ -51,6 +51,7 @@ public class _03_VanGogh extends PApplet {
     PImage paintbrushCursor;
     boolean initializeCanvas = true;
     PImage[] image;
+    int currentIndex;
     /*
      * Write your code below
      */
@@ -58,10 +59,23 @@ public class _03_VanGogh extends PApplet {
     
     void initializePaintings() {
         image = new PImage[4];
+        image[0] = loadImage("starryNight.jpg");
+        image[1] = loadImage("strawHatPortrait.jpg");
+        image[2] = loadImage("painterOnRoad.jpg");
+        image[3] = loadImage("wheatField.jpg");
+        currentIndex = 0;
+        brush.setNewPainting(image[currentIndex]);
+       
     }
     
     void selectNextPainting() {
-        
+        currentIndex += 1;
+        if(currentIndex >= image.length) {
+        	currentIndex = 0;
+      
+        }
+        brush.setNewPainting(image[currentIndex]);
+       
     }
 
     @Override
